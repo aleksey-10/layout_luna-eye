@@ -4,3 +4,15 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin button($bg) {
+  background-color: $bg;
+  color: #fff;
+
+  @include hover(color, $bg);
+  @include hover(background-color, $bg-clr);
+
+  &:hover {
+    border: 1px solid $bg;
+  }
+}

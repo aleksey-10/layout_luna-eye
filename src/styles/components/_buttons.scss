@@ -1,0 +1,32 @@
+.btn {
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  line-height: 15px;
+
+  &--dark {
+    @include button(#000);
+  }
+
+  &--primary {
+    @include button($general-clr);
+  }
+
+  &--small {
+    width: 102px;
+  }
+}
+
+.btn-icon {
+  width: 14px;
+  height: 14px;
+  border: none;
+  background: center / cover no-repeat none;
+  display: none;
+  
+  &--active {
+    display: inline-block;
+  }
+}

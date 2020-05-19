@@ -1,0 +1,54 @@
+.contact {
+  max-width: 1020px;
+  margin: 0 auto;
+  display: flex;
+  padding: 150px 30px 0;
+
+  &__title {
+    margin-right: 10px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 438px;
+  }
+
+  &__input {
+    margin-bottom: 19px;
+  }
+
+  &__textarea {
+    margin-bottom: 30px;
+    resize: none;
+  }
+
+  &__input,
+  &__textarea {
+    padding: 15px 30px;
+    border: 1px solid #828282;
+    background-color: $bg-clr;
+    color: $secondary-clr;
+    transition: box-shadow 0.3s;
+
+    &::placeholder {
+      color: $lighten-clr;
+    }
+
+    &:focus {
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+@media (max-width: $res-mobile) {
+  .contact {
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+      margin-bottom: 30px;
+    }
+  }
+}

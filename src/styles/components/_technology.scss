@@ -1,0 +1,99 @@
+.technology {
+  max-width: 1300px;
+
+  &__title {
+    padding: 0 30px;
+  }
+
+  &__slider {
+    display: none;
+  }
+
+  &__construction {
+    width: 100%;
+  }
+
+  &__comment {
+    margin-bottom: 45px;
+  }
+}
+
+.luna-tech {
+  background: left / contain no-repeat url(../../images/technology.png);
+  width: 100%;
+  height: 650px;
+
+  &--double {
+    width: 200%;
+  }
+}
+
+.comment {
+  max-width: 786px;
+  padding: 90px 30px 0;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &__quotation {
+    position: relative;
+    font-size: 1.71rem;
+    line-height: 1.5em;
+    font-weight: bold;
+    margin-bottom: 40px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 278px;
+      height: 171px;
+      background: center / contain no-repeat url(../../images/quotation-mark.png);
+    }
+  }
+
+  &__img {
+    width: 62px;
+    height: 62px;
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    margin-bottom: 5px;
+    font-size: 1.14rem;
+    line-height: 1.69em;
+  }
+
+  &__job {
+    line-height: 1.2em;
+    color: $secondary-clr;
+  }
+}
+
+@media (max-width: $res-tablet) {
+  .technology {
+    &__slider {
+      display: block;
+    }
+
+    &__construction {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $res-mobile) {
+  .luna-tech {
+    height: 500px;
+  }
+
+  .comment {
+    &__quotation {
+      font-size: 1rem;
+    }
+  }
+}
