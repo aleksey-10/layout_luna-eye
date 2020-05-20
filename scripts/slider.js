@@ -24,7 +24,7 @@ class Slider {
     }
 
     this.gallery.style.transform
-      = `translate(-${this.counter * 100}%) translate(-${this.counter * 50}px)`;
+      = `translate(-${this.counter * 100}%)`;
 
     this.current.innerHTML = `0${this.counter + 1}&nbsp;`;
   }
