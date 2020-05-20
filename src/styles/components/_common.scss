@@ -6,18 +6,6 @@
   }
 }
 
-.arrow-up {
-  display: none;
-  position: fixed;
-  right: 40px;
-  bottom: 40px;
-  width: 24px;
-  height: 24px;
-  background: center / contain no-repeat url(../../images/svg/arrow-up.svg);
-
-  @include hover(opacity, 0.7);
-}
-
 @media (max-width: $res-notebook) {
   .main {
     &__section {
