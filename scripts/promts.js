@@ -7,44 +7,45 @@ class InnerPrompts {
   }
 
   init() {
-    this.wrapper.onclick = (e) => this._open(e);
+    this.wrapper.onclick = (e) => e.target.tagName === 'BUTTON'
+      && this.open(e.target.parentElement
+        .querySelector(`.${this.promptClassName}`));
+
+    return this;
   }
 
-  _open(e) {
-    if (e.target.tagName !== 'BUTTON') {
-      return;
-    }
-
-    const description = e.target
-      .parentElement.querySelector(`.${this.promptClassName}`);
-
+  open(element) {
     for (const item of this.wrapper.children) {
-      if (item === e.target.parentElement) {
+      if (item === element.parentElement) {
         continue;
       }
 
-      this._close(item.querySelector(`.${this.promptClassName}`));
+      this.close(item.querySelector(`.${this.promptClassName}`));
     }
 
-    description.classList.toggle(`${this.promptClassName}--active`);
-
-    this._setPosition(description);
+    !element.classList.contains(`${this.promptClassName}--active`)
+      ? this._setUp(element)
+      : this.close(element);
   }
 
-  _close(element) {
+  close(element) {
+    element.parentElement.querySelector('button').style.backgroundColor = '';
     element.classList.remove(`${this.promptClassName}--active`);
     element.style.height = 0;
+  }
+
+  _setUp(element) {
+    element.classList.add(`${this.promptClassName}--active`);
+
+    element.parentElement
+      .querySelector('button').style.backgroundColor = '#000';
+
+    this._setPosition(element);
   }
 
   _setPosition(element) {
     const elementCoordinates = element.getBoundingClientRect();
     const wrapperCoordinates = this.wrapper.getBoundingClientRect();
-
-    if (!element.classList.contains((`${this.promptClassName}--active`))) {
-      element.style.height = 0;
-
-      return;
-    }
 
     elementCoordinates.x < 0
       && element.classList.add(`${this.promptClassName}--mirror`);
@@ -55,5 +56,7 @@ class InnerPrompts {
 }
 
 for (const item of document.querySelectorAll('.luna-tech')) {
-  new InnerPrompts(item).init();
+  new InnerPrompts(item)
+    .init()
+    .open(item.querySelector('.parametr__description'));
 }
