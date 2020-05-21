@@ -13,7 +13,7 @@ class Slider {
     this.counter = 0;
 
     this.slider.querySelector('.slider__arrows').onclick = e =>
-      !e.target.classList.contains('slider__arrow') ? undefined : this._swap(e);
+      e.target.classList.contains('slider__arrow') && this._swap(e);
   }
 
   _swap(e) {

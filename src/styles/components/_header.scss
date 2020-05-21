@@ -97,6 +97,7 @@
 
     &__img {
       height: 365px;
+      object-position: left bottom;
     }
   }
 }
@@ -145,6 +146,14 @@
 
     &__nav-mobile {
       display: block;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    &__img {
+      height: 200px;
     }
   }
 }

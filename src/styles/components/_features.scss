@@ -29,7 +29,7 @@
 
   &__slider {
     display: none;
-    padding: 0 30px;
+    padding: 0;
     height: 350px;
   }
 
@@ -111,7 +111,7 @@
   }
 
   .feature {
-    width: auto;
+    width: 100%;
     align-items: center;
 
     &__title {
