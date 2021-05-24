@@ -1,7 +1,20 @@
+@import "reset";
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "components";
+
+html {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  margin: 0;
+  background-color: $bg-clr;
+}
+
+* {
+  box-sizing: border-box;
 }

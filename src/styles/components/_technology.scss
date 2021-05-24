@@ -1,0 +1,200 @@
+.technology {
+  max-width: 1300px;
+
+  &__title {
+    padding: 0 30px;
+  }
+
+  &__slider {
+    display: none;
+  }
+
+  &__construction {
+    width: 100%;
+  }
+
+  &__comment {
+    margin-bottom: 45px;
+  }
+}
+
+.luna-tech {
+  position: relative;
+  background: left / contain no-repeat url(../../images/technology.png);
+  height: 660px;
+  width: 100%;
+
+  &__item {
+    position: absolute;
+    height: 100%;
+
+    &:nth-child(1) {
+      left: 10%;
+      top: 30%;
+    }
+
+    &:nth-child(2) {
+      left: 20%;
+      top: 50%;
+    }
+
+    &:nth-child(3) {
+      left: 25%;
+      top: 40%;
+    }
+
+    &:nth-child(4) {
+      left: 30%;
+      top: 20%;
+    }
+
+    &:nth-child(5) {
+      left: 40%;
+      top: 55%;
+    }
+
+    &:nth-child(6) {
+      left: 45%;
+      top: 25%;
+    }
+
+    &:nth-child(7) {
+      left: 57%;
+      top: 45%;
+    }
+
+    &:nth-child(8) {
+      left: 70%;
+      top: 25%;
+    }
+
+    &:nth-child(9) {
+      left: 75%;
+      top: 15%;
+    }
+
+    &:nth-child(10) {
+      left: 80%;
+      top: 30%;
+    }
+
+    &:nth-child(11) {
+      left: 85%;
+      top: 25%;
+    }
+  }
+}
+
+.parametr {
+  &__circle {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $general-clr;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include hover(background-color, #000);
+
+    &::after {
+      position: absolute;
+      content: "+";
+      font-size: 1.75rem;
+      color: #fff;
+    }
+  }
+
+  &__description {
+    position: absolute;
+    z-index: 0;
+
+    opacity: 0;
+    width: 200px;
+    height: 150px;
+    top: 70px;
+    transform: translate(-100%) translate(24px);
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+
+    transition: opacity 0.3s, height 0.3s;
+
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 13px;
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: -2px;
+      left: 0;
+      width: 63px;
+      height: 4px;
+      background-color: #000;
+    }
+
+    &--active {
+      opacity: 1;
+    }
+
+    &--mirror {
+      border-right: none;
+      border-left: 1px solid #000;
+      padding-left: 13px;
+      text-align: right;
+      transform: translate(24px);
+
+      &::after {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: $res-tablet) {
+  .technology {
+    &__slider {
+      display: block;
+    }
+
+    &__construction {
+      display: none;
+    }
+  }
+
+  .luna-tech {
+    height: 600px;
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: $res-mobile) {
+  .luna-tech {
+    margin-left: 0;
+    width: 1300px;
+  }
+
+  .parametr {
+    &__description {
+      width: 125px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .luna-tech {
+    height: 550px;
+    width: 1000px;
+  }
+}
+
+@media (max-width: 475px) {
+  .luna-tech {
+    height: 480px;
+    width: 680px;
+  }
+}

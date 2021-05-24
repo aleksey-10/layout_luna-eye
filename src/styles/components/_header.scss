@@ -1,0 +1,159 @@
+.header {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 76px;
+    margin-bottom: 90px;
+  }
+
+  &__set {
+    display: flex;
+    align-items: center;
+    @include hover(color, $secondary-clr);
+  }
+
+  &__control {
+    display: none;
+  }
+
+  &__burger {
+    width: 24px;
+    background-image: url(../../images/svg/burger.svg);
+  }
+
+  &__times {
+    background-image: url(../../images/svg/times.svg);
+  }
+
+  &__nav-mobile {
+    display: none;
+    z-index: 2;
+  }
+
+  &__specs {
+    color: #4f4f4f;
+    width: 72px;
+    line-height: 21px;
+    margin-right: 12px;
+
+    @include hover(color, $lighten-clr);
+  }
+
+  &__languages {
+    margin-right: 37px;
+  }
+
+  &__language {
+    color: $lighten-clr;
+
+    &--active {
+      color: $prim-clr;
+    }
+
+    @include hover(color, $prim-clr);
+  }
+
+  &__intro {
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 100px;
+  }
+
+  &__info {
+    width: 378px;
+  }
+
+  &__title {
+    margin-bottom: 27px;
+  }
+
+  &__description {
+    font-size: 1.14rem;
+    line-height: 1.5em;
+  }
+
+  &__img {
+    height: 475px;
+    width: 100%;
+    object-fit: cover;
+    object-position: left bottom;
+  }
+}
+
+@media (max-width: $res-notebook) {
+  .header {
+    &__intro {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+@media (max-width: $res-tablet) {
+  .header {
+    &__info {
+      width: 340px;
+    }
+
+    &__img {
+      height: 365px;
+      object-position: left bottom;
+    }
+  }
+}
+
+@media (max-width: $res-mobile) {
+  .header {
+    &__top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      padding: 0 30px;
+      background-color: $bg-clr;
+      margin-bottom: 0;
+    }
+    
+    &__set {
+      display: none;
+    }
+
+    &__control {
+      display: block;
+    }
+    
+    &__intro {
+      flex-direction: column-reverse;
+      align-items: center;
+      padding-top: 76px;
+      margin-bottom: 0;
+    }
+
+    &__info {
+      text-align: center;
+      width: auto;
+    }
+
+    &__img {
+      width: 100%;
+      max-height: 275px;
+    }
+
+    &__nav {
+      display: none;
+    }
+
+    &__nav-mobile {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    &__img {
+      height: 200px;
+    }
+  }
+}

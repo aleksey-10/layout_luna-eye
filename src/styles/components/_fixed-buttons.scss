@@ -1,0 +1,49 @@
+.fixed-buttons {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__purchase {
+    display: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $general-clr;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 24px;
+      height: 16px;
+
+      background: center / contain no-repeat url(../../images/svg/cart.svg);
+    }
+  }
+
+  &__arrow-up {
+    display: none;
+    width: 24px;
+    height: 24px;
+
+    background: center / contain no-repeat url(../../images/svg/arrow-up.svg);
+
+    @include hover(opacity, 0.7);
+  }
+}
+
+@media (max-width: $res-mobile) {
+  .fixed-buttons {
+    &__purchase {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__arrow-up {
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+
+.main {
+  &__section {
+    padding-top: 150px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: $res-notebook) {
+  .main {
+    &__section {
+      padding-top: 130px;
+    }
+  }
+}
+
+@media (max-width: $res-mobile) {
+  .main {
+    &__section {
+      padding-top: 89px;
+    }
+  }
+}

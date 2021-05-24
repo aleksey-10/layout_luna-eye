@@ -1,0 +1,54 @@
+.comment {
+  max-width: 786px;
+  padding: 90px 30px 40px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &__quotation {
+    position: relative;
+    font-size: 1.71rem;
+    line-height: 1.5em;
+    font-weight: bold;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 278px;
+      height: 171px;
+      background: center / contain no-repeat url(../../images/quotation-mark.png);
+    }
+  }
+
+  &__img {
+    width: 62px;
+    height: 62px;
+    margin-bottom: 20px;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__name {
+    margin-bottom: 5px;
+    font-size: 1.14rem;
+    line-height: 1.69em;
+  }
+
+  &__job {
+    line-height: 1.2em;
+    color: $secondary-clr;
+  }
+}
+
+@media (max-width: $res-mobile) {
+  .comment {
+    &__quotation {
+      font-size: 1rem;
+    }
+  }
+}
